@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Interactive Cards + Flying Boom</title>
+<link href="https://fonts.googleapis.com/css2?family=Short+Stack&family=Homemade+Apple&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Background particles -->
+<canvas id="bgCanvas"></canvas>
+
+<!-- Flying items -->
+<div id="flyContainer">
+  <div class="fly-item">💖 Love 💖</div>
+  <div class="fly-item">😍 You 😍</div>
+  <div class="fly-item"><img src="images/yourImage.jpg" alt="Flying Image"></div>
+</div>
+
+<!-- Cards -->
+<div class="cards-container">
+  <div class="card active">
+    <div class="card-image"><img src="images/1.jpeg"></div>
+    <div class="card-text"><p>তুমি আমার প্রিয় মানুষ 😍</p><p>Always amazing ❤️</p></div>
+  </div>
+  <div class="card">
+    <div class="card-image"><img src="images/2.jpeg"></div>
+    <div class="card-text"><p>You are so cute ❤️</p></div>
+  </div>
+  <div class="card">
+    <div class="card-image"><img src="images/3.jpg"></div>
+    <div class="card-text"><p>My favorite person 😍</p></div>
+  </div>
+</div>
+
+<!-- Buttons -->
+<div class="buttons-container">
+  <button id="prevBtn">Previous Card</button>
+  <button id="nextBtn">Next Card</button>
+  <button id="blockBtn">Catch Me!</button>
+</div>
+
+<!-- Popup -->
+<div id="popupOverlay">
+  <div id="popupContent">
+    <p id="popupText"></p>
+    <img id="popupImage" src="" alt="Popup Image">
+    <button id="cancelBtn">Cancel</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
