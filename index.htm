@@ -1,55 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Interactive Cards + Flying Boom</title>
-<link href="https://fonts.googleapis.com/css2?family=Short+Stack&family=Homemade+Apple&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Flying Cards & Boom</title>
+  <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Background particles -->
-<canvas id="bgCanvas"></canvas>
-
-<!-- Flying items -->
-<div id="flyContainer">
-  <div class="fly-item">💖 Love 💖</div>
-  <div class="fly-item">😍 You 😍</div>
-  <div class="fly-item"><img src="images/yourImage.jpg" alt="Flying Image"></div>
-</div>
-
-<!-- Cards -->
-<div class="cards-container">
-  <div class="card active">
-    <div class="card-image"><img src="images/1.jpeg"></div>
-    <div class="card-text"><p>তুমি আমার প্রিয় মানুষ 😍</p><p>Always amazing ❤️</p></div>
+  <!-- Header -->
+  <div class="animated-header">
+    <h1>✨ Riyad Flying Cards ✨</h1>
   </div>
-  <div class="card">
-    <div class="card-image"><img src="images/2.jpeg"></div>
-    <div class="card-text"><p>You are so cute ❤️</p></div>
-  </div>
-  <div class="card">
-    <div class="card-image"><img src="images/3.jpg"></div>
-    <div class="card-text"><p>My favorite person 😍</p></div>
-  </div>
-</div>
 
-<!-- Buttons -->
-<div class="buttons-container">
-  <button id="prevBtn">Previous Card</button>
-  <button id="nextBtn">Next Card</button>
-  <button id="blockBtn">Catch Me!</button>
-</div>
-
-<!-- Popup -->
-<div id="popupOverlay">
-  <div id="popupContent">
-    <p id="popupText"></p>
-    <img id="popupImage" src="" alt="Popup Image">
-    <button id="cancelBtn">Cancel</button>
+  <!-- Cards Navigation -->
+  <div class="buttons-container">
+    <button id="prevBtn">Previous Card</button>
+    <button id="nextBtn">Next Card</button>
   </div>
-</div>
 
-<script src="script.js"></script>
+  <!-- Flying Items Input -->
+  <div class="fly-input-container">
+    <input type="text" id="flyInput" placeholder="Add flying text or image URL">
+    <button id="flyAddBtn">Add Flying Item</button>
+  </div>
+
+  <!-- Cards Container -->
+  <div class="cards-container">
+    <div class="card active">
+      <div class="card-image"><img src="images/1.jpeg" alt="Image 1"></div>
+      <div class="card-text">
+        <p>This is some example text for card 1. It can be very long and scrollable.</p>
+        <p>Another line of text here.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image"><img src="./rr.png" alt="Image 2"></div>
+      <div class="card-text">
+        <p>Card 2 text goes here. You can add more paragraphs and scroll inside the card.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image"><img src="./rr.png" alt="Image 2"></div>
+      <div class="card-text">
+        <p>Card 2 text goes here. You can add more paragraphs and scroll inside the card.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image"><img src="./rr.png" alt="Image 2"></div>
+      <div class="card-text">
+        <p>Card 2 text goes here. You can add more paragraphs and scroll inside the card.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image"><img src="images/3.jpg" alt="Image 3"></div>
+      <div class="card-text">
+        <p>Card 3 text is scrollable and wraps nicely inside the card.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flying Items Container -->
+  <div id="flyContainer"></div>
+
+  <!-- Particles Canvas -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- Popup Boom -->
+  <div id="popupOverlay">
+    <div id="popupContent">
+      <p id="popupText"></p>
+      <img id="popupImage" src="" alt="Boom Image">
+      <button id="cancelBtn">Cancel</button>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 </html>
