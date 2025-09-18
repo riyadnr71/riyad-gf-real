@@ -7,57 +7,48 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="bgCanvas"></canvas>
-
   <header>
-    <h1>✨ Welcome to Magic World ✨</h1>
+    <h1>✨ Riyad Flying Cards ✨</h1>
   </header>
 
   <!-- Cards -->
-  <div class="card-container">
+  <div class="cards-container">
     <div class="card active">
-      <div class="card-image">
-        <img src="./image/r1.jpg" alt="Card 1">
-      </div>
-      <div class="card-content">
-        <h3>First Card</h3>
-        <p>এখানে প্রথম কার্ডের description থাকবে। সুন্দর কিছু লিখতে পারো।</p>
-      </div>
+      <div class="card-image"><img src="./image/r1.jpg" alt=""></div>
+      <div class="card-text"><p>তুমি যেমন মিষ্টি, ঠিক তেমনই তোমার হাসি আমার মনকে আনন্দে ভরে দেয়।</p></div>
     </div>
     <div class="card">
-      <div class="card-image">
-        <img src="images/demo2.jpg" alt="Card 2">
-      </div>
-      <div class="card-content">
-        <h3>Second Card</h3>
-        <p>এখানে দ্বিতীয় কার্ডের description থাকবে।</p>
-      </div>
+      <div class="card-image"><img src="./image/r2.jpg" alt=""></div>
+      <div class="card-text"><p>💖 তুমি যখন হাসো, মনে হয় আমার পৃথিবীটা আলোকিত হয়ে যায়।</p></div>
     </div>
     <div class="card">
-      <div class="card-image">
-        <img src="images/demo3.jpg" alt="Card 3">
-      </div>
-      <div class="card-content">
-        <h3>Third Card</h3>
-        <p>এখানে তৃতীয় কার্ডের description থাকবে।</p>
-      </div>
+      <div class="card-image"><img src="./image/r3.jpg" alt=""></div>
+      <div class="card-text"><p>আরও সুন্দর মুহূর্ত এখানে লিখতে পারো। Scroll করে পড়া যাবে।</p></div>
+    </div>
+    <div class="card">
+      <div class="card-image"><img src="./back/letter-r.png" alt=""></div>
+      <div class="card-text"><p>আরও সুন্দর মুহূর্ত এখানে লিখতে পারো। Scroll করে পড়া যাবে।</p></div>
     </div>
   </div>
 
   <!-- Buttons -->
-  <div class="buttons">
-    <button id="prevBtn">Previous</button>
-    <button id="nextBtn">Next</button>
-    <input type="text" id="flyInput" placeholder="Write text or image URL">
-    <button id="addFlyBtn">Add Flying</button>
+  <div class="buttons-container">
+    <button id="prevBtn">Previous Card</button>
+    <button id="nextBtn">Next Card</button>
+  </div>
+
+  <!-- Input for flying items -->
+  <div class="fly-input-container">
+    <input type="text" id="flyInput" placeholder="Add text or image URL">
+    <button id="flyAddBtn">Add Flying Item</button>
   </div>
 
   <!-- Flying items container -->
   <div id="flyContainer"></div>
 
-  <!-- Boom popup -->
+  <!-- Popup -->
   <div id="popupOverlay">
-    <div class="popup">
+    <div id="popupContent">
       <p id="popupText"></p>
       <img id="popupImage" src="" alt="">
       <button id="cancelBtn">Cancel</button>
