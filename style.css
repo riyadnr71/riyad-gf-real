@@ -1,271 +1,159 @@
-/* ---------- Body & Canvas ---------- */
+/* General */
 body {
   margin: 0;
-  font-family: 'Short Stack', cursive;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
   background-image: url(./back/b.jpg);
+  color: rgb(0, 0, 0);
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #f9103e;
+}
+
+/* Cards */
+.card-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  overflow: hidden;
-}
-
-#bgCanvas {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  z-index: -2;
-}
-
-/* ---------- Header Animation ---------- */
-.animated-header {
   position: relative;
-  text-align: center;
-  width: 100%;
-  margin-bottom: 20px;
-  z-index: 25;
-}
-.animated-header h1 {
-  font-family: 'Homemade Apple', cursive;
-  font-size: 2rem;
-  color: #ff4d6d;
-  animation: colorChange 6s infinite alternate;
-}
-@keyframes colorChange {
-  0%{color:#ff4d6d;}
-  50%{color:#ff9999;}
-  100%{color:#ff4d6d;}
+  margin-top: 20px;
 }
 
-/* Sparkles */
-.sparkle-container {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 50px;
-  pointer-events: none;
-  overflow: visible;
-}
-.sparkle {
-  position: absolute;
-  width: 5px; height: 5px;
-  background: white;
-  border-radius: 50%;
-  opacity: 0.7;
-  animation: sparkleFly 3s linear infinite;
-}
-@keyframes sparkleFly {
-  0%{transform:translateY(0) scale(0.5); opacity:0.7;}
-  50%{opacity:1;}
-  100%{transform:translateY(-100px) scale(1); opacity:0;}
-}
-
-/* ---------- Cards ---------- */
-.cards-container {
-  position: relative;
-  width: 90%;
-  max-width: 300px;
-  height: 400px;
-  margin-bottom: 20px;
-}
 .card {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  opacity: 0;
-  transform: scale(0.8);
-  overflow: hidden; /* কার্ডের ভিতরের স্ক্রল ঠিক হবে */
+  display: none;
+  width: 350px;
+  background: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
 .card.active {
-  opacity: 1;
-  transform: scale(1);
+  display: block;
 }
 
-/* Image & Text */
 .card-image {
-  flex: 0 0 60%;
+  width: 100%;
+  height: 220px;
   overflow: hidden;
 }
+
 .card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  border-radius: 15px 15px 0 0;
+  transition: transform 0.3s ease;
 }
 
-.card-text {
-  flex: 1 1 40%;
-  padding: 10px;
+/* Click animation */
+@keyframes imgBounce {
+  0%   { transform: scale(1) rotate(0deg); }
+  30%  { transform: scale(1.2) rotate(5deg); }
+  60%  { transform: scale(0.9) rotate(-5deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.card-image img.animate {
+  animation: imgBounce 0.6s ease;
+}
+
+.card-content {
+  padding: 15px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 15px;
   text-align: center;
-  overflow-y: auto; /* vertical scroll */
-  word-wrap: break-word;
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #ff6666 #fff; /* Firefox */
-}
-.card-text p {
-  margin: 5px 0;
-  font-size: 14px;
-  white-space: normal;
 }
 
-/* Scrollbar for Webkit browsers */
-.card-text::-webkit-scrollbar {
-  width: 6px;
-}
-.card-text::-webkit-scrollbar-track {
-  background: #fff;
-  border-radius: 3px;
-}
-.card-text::-webkit-scrollbar-thumb {
-  background-color: #ff6666;
-  border-radius: 3px;
-}
-
-/* ---------- Buttons ---------- */
-.buttons-container {
-  display: flex;
-  gap: 12px;
-  z-index: 20;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
-}
 button {
-  padding: 10px 15px;
-  font-size: 14px;
-  cursor: pointer;
+  padding: 10px 20px;
+  margin: 5px;
   border: none;
-  border-radius: 10px;
-  background: #ff6666;
+  background: #ff4081;
   color: white;
-  transition: transform 0.2s ease;
-  touch-action: manipulation;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
 }
+
 button:hover {
-  transform: scale(1.05);
+  background: #f50057;
 }
 
-/* Input for flying items */
-.fly-input-container {
-  display: flex;
-  gap: 8px;
-  z-index: 20;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-.fly-input-container input {
-  padding: 8px;
-  border-radius: 8px;
+input {
+  padding: 10px;
+  border-radius: 5px;
   border: none;
-  width: 200px;
-}
-.fly-input-container button {
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: none;
-  background: #ff6666;
-  color: white;
-  cursor: pointer;
+  margin-left: 5px;
 }
 
-/* ---------- Flying Items ---------- */
+/* Flying items */
 #flyContainer {
   position: fixed;
-  top:0; left:0;
-  width:100vw; height:100vh;
-  overflow:hidden;
-  z-index:5;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
+
 .fly-item {
-  position:absolute;
-  cursor:pointer;
-  z-index:10;
-  font-size:20px;
-  font-weight: normal;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity:0;
-  animation: fadeIn 1s forwards;
-  touch-action: none;
+  position: absolute;
+  font-size: 24px;
+  pointer-events: auto;
+  cursor: pointer;
+  user-select: none;
 }
+
 .fly-item img {
-  width: 80px;
-  height: 80px;
-  border-radius:10px;
-  margin-right: 50px;
-}
-@keyframes fadeIn {
-  from{opacity:0; transform:scale(0.5) rotate(0deg);}
-  to{opacity:1; transform:scale(1) rotate(0deg);}
-}
-.fly-item.boom {
-  animation: boom 0.5s forwards;
-}
-@keyframes boom {
-  0%{transform:scale(1) rotate(0deg); opacity:1;}
-  100%{transform:scale(1.5) rotate(360deg); opacity:0;}
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
 
-/* ---------- Popup ---------- */
+/* Popup */
 #popupOverlay {
-  position:fixed;
-  top:0; left:0;
-  width:100vw; height:100vh;
-  background:rgba(0,0,0,0.6);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  z-index:30;
-}
-#popupContent {
-  background:#fff;
-  padding:20px 30px;
-  border-radius:15px;
-  text-align:center;
-  animation: popupScale 0.5s ease forwards;
-}
-#popupContent p {
-  font-size:18px;
-  font-weight:bold;
-  animation: textBounce 0.6s ease;
-}
-#popupContent img {
-  width:150px; height:150px;
-  margin-top:10px;
-  border-radius:10px;
-}
-#cancelBtn {
-  margin-top:15px;
-  padding:8px 20px;
-  font-size:16px;
-  cursor:pointer;
-  border:none;
-  border-radius:10px;
-  background:#ff6666;
-  color:white;
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
 }
 
-/* ---------- Popup Animations ---------- */
-@keyframes popupScale {
-  0%{transform:scale(0.5); opacity:0;}
-  100%{transform:scale(1); opacity:1;}
-}
-@keyframes textBounce {
-  0%{transform:translateY(-20px); opacity:0;}
-  50%{transform:translateY(10px); opacity:1;}
-  100%{transform:translateY(0); opacity:1;}
+.popup {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
 }
 
-/* ---------- Responsive ---------- */
-@media(max-width:600px){
-  .cards-container { width:90%; height:300px; }
-  .card-text p { font-size:14px; }
-  .fly-input-container input { width:120px; }
-  .animated-header h1 { font-size:1.5rem; }
-  .fly-item { font-size:16px; }
+#popupImage {
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+/* Background canvas */
+#bgCanvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }

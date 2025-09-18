@@ -2,184 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Flying Cards & Boom</title>
-  <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magic Cards with Flying Items</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Header -->
-  <div class="animated-header">
-    <h1>✨ Riyad Flying Cards ✨</h1>
-  </div>
-
-  <!-- Cards Navigation -->
-  <div class="buttons-container">
-    <button id="prevBtn">Previous Card</button>
-    <button id="nextBtn">Next Card</button>
-  </div>
-
-  <!-- Flying Items Input -->
-  <div class="fly-input-container">
-    <input type="text" id="flyInput" placeholder="Add flying text or image URL">
-    <button id="flyAddBtn">Add Flying Item</button>
-  </div>
-
-  <!-- Cards Container -->
-  <div class="cards-container">
-    <div class="card active">
-      <div class="card-image"><img src="./image/r1.jpg" alt="Image 1"></div>
-      <div class="card-text">
-        <h3>Hey Cutie! 😍</h3>
-        <p>তুমি যেমন মিষ্টি, ঠিক তেমনই তোমার হাসি আমার মনকে আনন্দে ভরে দেয়। 
-     তোমার সাথে প্রতিটি দিন যেন এক নতুন গল্প</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-image"><img src="./image/r2.jpg" alt="Image 2"></div>
-      <div class="card-text">
-        <p>"তুমি আমার সব। 💖"
-"</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image"><img src="./image/r3.jpg" alt="Image 2"></div>
-      <div class="card-text">
-        <p>" তুমি আমার সব। 💖"
-"</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image"><img src="./image/r4.jpg" alt="Image 2"></div>
-      <div class="card-text">
-        <p>"তুমি আমার সব। 💖"
-"</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image"><img src="./image/r5.jpg" alt="Image 2"></div>
-      <div class="card-text">
-        <p>"তুমি আমার সব। 💖"
-"</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image"><img src="./image/r6.jpeg" alt="Image 2"></div>
-      <div class="card-text">
-        <p>"তুমি আমার সব। 💖"
-"</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image"><img src="./image/r7.jpeg" alt="Image 2"></div>
-      <div class="card-text">
-        <p>"তুমি আমার সব। 💖"
-"</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image"><img src="./image/r8.jpg" alt="Image 2"></div>
-      <div class="card-text">
-        <p>"তুমি আমার সব। 💖"
-"</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image"><img src="./image/r9.jpg" alt="Image 2"></div>
-      <div class="card-text">
-        <p>"তুমি আমার সব। 💖"
-"</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image"><img src="./image/r10.jpg" alt="Image 2"></div>
-      <div class="card-text">
-        <p>" তুমি আমার সব। 💖"
-"</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image"><img src="./image/r11.jpg" alt="Image 2"></div>
-      <div class="card-text">
-        <p>"তুমি আমার সব। 💖"
-"</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image"><img src="./image/r12.jpg" alt="Image 2"></div>
-      <div class="card-text">
-        <p>"তুমি আমার সব। 💖"
-"</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image"><img src="./image/r13.jpg" alt="Image 2"></div>
-      <div class="card-text">
-        <p>"তুমি আমার সব। 💖"
-"</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image"><img src="./image/r14.jpg" alt="Image 2"></div>
-      <div class="card-text">
-        <p>" তুমি আমার সব। 💖"
-"</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image"><img src="./image/r15.jpg" alt="Image 2"></div>
-      <div class="card-text">
-        <p>" তুমি আমার সব। 💖"
-"</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image"><img src="./image/r16.jpg" alt="Image 2"></div>
-      <div class="card-text">
-        <p>"তোমার জন্যই আছে। শুধু তুমি থাকো পাশে। ✨"
-"তোমার সাথে কাটানো সময়টাই আমার সবচেয়ে প্রিয় মুহূর্ত। 💕"
-"তুমি আমার চিন্তা, তুমি আমার স্বপ্ন, তুমি আমার সব। 💖"
-"</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image"><img src="./image/r17.jpg" alt="Image 2"></div>
-      <div class="card-text">
-        <p>Card 2 text goes here. You can add more paragraphs and scroll inside the card.</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image"><img src="./image/r18.jpg" alt="Image 2"></div>
-      <div class="card-text">
-        <p>Card 2 text goes here. You can add more paragraphs and scroll inside the card.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-image"><img src="images/3.jpg" alt="Image 3"></div>
-      <div class="card-text">
-        <p>Card 3 text is scrollable and wraps nicely inside the card.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Flying Items Container -->
-  <div id="flyContainer"></div>
-
-  <!-- Particles Canvas -->
   <canvas id="bgCanvas"></canvas>
 
-  <!-- Popup Boom -->
+  <header>
+    <h1>✨ Welcome to Magic World ✨</h1>
+  </header>
+
+  <!-- Cards -->
+  <div class="card-container">
+    <div class="card active">
+      <div class="card-image">
+        <img src="./image/r1.jpg" alt="Card 1">
+      </div>
+      <div class="card-content">
+        <h3>First Card</h3>
+        <p>এখানে প্রথম কার্ডের description থাকবে। সুন্দর কিছু লিখতে পারো।</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/demo2.jpg" alt="Card 2">
+      </div>
+      <div class="card-content">
+        <h3>Second Card</h3>
+        <p>এখানে দ্বিতীয় কার্ডের description থাকবে।</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <img src="images/demo3.jpg" alt="Card 3">
+      </div>
+      <div class="card-content">
+        <h3>Third Card</h3>
+        <p>এখানে তৃতীয় কার্ডের description থাকবে।</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div class="buttons">
+    <button id="prevBtn">Previous</button>
+    <button id="nextBtn">Next</button>
+    <input type="text" id="flyInput" placeholder="Write text or image URL">
+    <button id="addFlyBtn">Add Flying</button>
+  </div>
+
+  <!-- Flying items container -->
+  <div id="flyContainer"></div>
+
+  <!-- Boom popup -->
   <div id="popupOverlay">
-    <div id="popupContent">
+    <div class="popup">
       <p id="popupText"></p>
-      <img id="popupImage" src="" alt="Boom Image">
+      <img id="popupImage" src="" alt="">
       <button id="cancelBtn">Cancel</button>
     </div>
   </div>
 
-  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>
