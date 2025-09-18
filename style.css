@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Short Stack', cursive;
-  background: linear-gradient(to right, #fceabb, #f8b500);
+  background-image: url(./back/b.jpg);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,16 +60,6 @@ body {
   100%{transform:translateY(-100px) scale(1); opacity:0;}
 }
 
-
-
-.card img {
-  width: 100%;
-  height: auto;       /* height auto রাখলে পুরো image proportion ঠিক থাকবে */
-  display: block;
-  object-fit: contain;  /* image cut হবে না */
-}
-
-
 /* ---------- Cards ---------- */
 .cards-container {
   position: relative;
@@ -81,7 +71,7 @@ body {
 .card {
   position: absolute;
   width: 100%;
-  max-width: 450px;
+  height: 100%;
   background: #fff;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -90,6 +80,7 @@ body {
   transition: transform 0.5s ease, opacity 0.5s ease;
   opacity: 0;
   transform: scale(0.8);
+  overflow: hidden; /* কার্ডের ভিতরের স্ক্রল ঠিক হবে */
 }
 
 .card.active {
@@ -104,8 +95,8 @@ body {
 }
 .card-image img {
   width: 100%;
-  height: 100%;        /* পুরো image দেখাবে */
-  object-fit: cover; /* cut হবে না */
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
@@ -113,13 +104,28 @@ body {
   flex: 1 1 40%;
   padding: 10px;
   text-align: center;
-  overflow-y: auto; /* scroll bar vertical */
+  overflow-y: auto; /* vertical scroll */
   word-wrap: break-word;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #ff6666 #fff; /* Firefox */
 }
 .card-text p {
   margin: 5px 0;
   font-size: 14px;
   white-space: normal;
+}
+
+/* Scrollbar for Webkit browsers */
+.card-text::-webkit-scrollbar {
+  width: 6px;
+}
+.card-text::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 3px;
+}
+.card-text::-webkit-scrollbar-thumb {
+  background-color: #ff6666;
+  border-radius: 3px;
 }
 
 /* ---------- Buttons ---------- */
@@ -140,6 +146,9 @@ button {
   color: white;
   transition: transform 0.2s ease;
   touch-action: manipulation;
+}
+button:hover {
+  transform: scale(1.05);
 }
 
 /* Input for flying items */
@@ -185,9 +194,10 @@ button {
   touch-action: none;
 }
 .fly-item img {
-  width: 80px;  /* বড় ছবি */
+  width: 80px;
   height: 80px;
   border-radius:10px;
+  margin-right: 50px;
 }
 @keyframes fadeIn {
   from{opacity:0; transform:scale(0.5) rotate(0deg);}

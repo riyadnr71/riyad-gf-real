@@ -100,7 +100,10 @@ function addFlyItem(content){
 addFlyItem("💖 Riyad 💖");
 addFlyItem("😍 Meghla 😍");
 addFlyItem("✨ Riyad+Meghla ✨");
-addFlyItem('./rrr.png');
+addFlyItem('./back/tools.png');
+addFlyItem('./back/letter-r.png');
+addFlyItem('./back/rm.png');
+addFlyItem('./back/fly1.png');
 
 
 // Animate flying
