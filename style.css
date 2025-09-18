@@ -29,7 +29,7 @@ header h1 {
 
 .card {
   display: none;
-  width: 350px;
+  width: 300px;
   background: #ffffff;
   border-radius: 15px;
   overflow: hidden;

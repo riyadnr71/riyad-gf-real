@@ -95,9 +95,9 @@ function addFlyItem(content){
 }
 
 // Default flying items
-addFlyItem("💖 Love 💖");
-addFlyItem("😍 You 😍");
-addFlyItem('<img src="images/heart.png" alt="Flying Image">');
+addFlyItem("💖 Riyad 💖");
+addFlyItem("😍 Meghla 😍");
+addFlyItem('<img src="./back/fly.png">');
 addFlyItem("✨ Extra Text ✨");
 
 // Animate flying items
