@@ -60,6 +60,16 @@ body {
   100%{transform:translateY(-100px) scale(1); opacity:0;}
 }
 
+
+
+.card img {
+  width: 100%;
+  height: auto;       /* height auto রাখলে পুরো image proportion ঠিক থাকবে */
+  display: block;
+  object-fit: contain;  /* image cut হবে না */
+}
+
+
 /* ---------- Cards ---------- */
 .cards-container {
   position: relative;
@@ -71,9 +81,9 @@ body {
 .card {
   position: absolute;
   width: 100%;
-  height: 100%;
+  max-width: 450px;
   background: #fff;
-  border-radius: 15px;
+  border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
@@ -94,10 +104,11 @@ body {
 }
 .card-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 15px 15px 0 0;
+  height: 100%;        /* পুরো image দেখাবে */
+  object-fit: cover; /* cut হবে না */
+  display: block;
 }
+
 .card-text {
   flex: 1 1 40%;
   padding: 10px;

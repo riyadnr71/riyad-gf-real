@@ -83,7 +83,7 @@ function addFlyItem(content){
   item.addEventListener('click', e=>{
     e.stopPropagation();
     item.classList.add('boom');
-    popupText.innerText = "Boom! তুমি ক্লিক করেছো!";
+    popupText.innerText = "কি সুন্দর উঠতিছিলো। দিলা তো নষ্ট করে!";
     if(item.querySelector('img')){
       popupImage.src = item.querySelector('img').src;
       popupImage.style.display='block';
